@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Students</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <h1 class="title">Add a New Student</h1>
+
+    <form class="form" action="/new" method="POST">
+
+        <label for="name">Name:</label>
+        <input type="text" name="name" required>
+
+        <label for="age">Age:</label>
+        <input type="number" name="age" required>
+
+        <label for="course">Course:</label>
+        <input type="text" name="course" required>
+
+        <label for="photo">Photo URL:</label>
+        <input type="url" name="photo" placeholder="https//......" required>
+
+        <button class="btn" type="submit">Save Student</button>
+    </form>
+
+    <a class="back" href="/">Back To Home</a>
+
+
+    
+</body>
+</html>

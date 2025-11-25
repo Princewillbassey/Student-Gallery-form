@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Gallery</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1 class="title">Student Profile Gallery</h1>
+
+    <a class="btn" href="/new">Add New Students</a>
+
+    <div class="gallery">
+        <% if (students.length === 0) { %>
+            <p>No Students Added Yet.</p>
+            <% } else { %>
+
+                <% students.forEach(s => { %>
+                    <div class="card">
+                        <img src="<%= s.photo %>" alt="photo">
+                        <h3><%= s.name  %></h3>
+                        <p>Age: <%= s.age  %></p>
+                        <p>Course: <%= s.course  %></p>
+
+                        <!-- Buttons Section -->
+                    <div class="actions">
+                        <!-- Edit Button -->
+                        <a class="edit-btn" href="/edit/<%= s._id %>">Edit</a>
+                      
+
+                        <!-- Delete Button -->
+                        <form action="/delete/<%= s._id %>" method="POST">
+                            <button class="delete-btn" type="submit">Delete</button>
+                        </form>
+                    </div>
+
+                    </div>
+
+                    <% }) %>
+
+                    <% } %>
+    </div>
+    
+
+    
+</body>
+</html>
